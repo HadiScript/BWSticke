@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -31,14 +32,24 @@ const CheckoutSuccess = () => {
   return (
     <ClientLayout>
 
-      <div className="d-flex   justify-content-center  mt-50 mb-50 " >
-        <div className="checkbox-form border rounded p-3" style={{ width: "700px" }}>
-          <h3>Your Invoice</h3>
-          <Invoice data={orderData} />
+      {error ? (
+        <Error500 />
+      ) : !data ? (
+        <div style={{ height: "100vh" }}>
+          <p>Please wait...</p>
         </div>
+      ) : !orderData.orderId ? (
+        <Error404 />
+      ) : (
+        <div className="d-flex flex-column align-items-center  justify-content-start  mt-50 mb-50 " >
+          <div className="checkbox-form border rounded p-3" style={{ width: "700px" }}>
+            <Invoice data={orderData} />
 
+            <Button onClick={printDoc} className="mt-4 " type="dashed" style={{ width: "100%" }}>Download Print</Button>
+          </div>
+        </div>
+      )}
 
-      </div>
 
 
 

@@ -25,8 +25,15 @@ const CartItems = ({ cart, increaseQty, decreaseQty, decimalBalance, removeFromC
       {cart?.items?.map((item) => (
         <tr className="cart-item" key={item.id}>
           <td className="product-thumbnail">
-            <div className="d-flex flex-wrap align-items-center justify-content-center gap-2">
-              <ImageLoader src={item.image[0]?.url} height={90} width={90} alt={item.name} />
+            <div className="d-flex flex-wrap align-items-center justify-content-center gap-5">
+              <ImageLoader
+                src={`${process.env.NEXT_PUBLIC_URL}/imgs/products/9.jpg`}
+                // src={item.image[0]?.url}
+                height={90}
+                width={90}
+                alt={item.name}
+                className={"rounded"}
+              />
               <div className="d-flex flex-column align-items-start">
                 <span className="product-name">{item?.name}, { }</span>
                 <b className="product-price">${item?.price}</b>

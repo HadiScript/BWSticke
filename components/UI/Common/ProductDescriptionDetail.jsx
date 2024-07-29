@@ -1,13 +1,15 @@
 import Link from 'next/link'
 import React from 'react'
+import ProductQ_A from './Product_QnA'
 
-const ProductDescriptionDetail = ({ activeIndex, handleOnClick, product }) => {
+const ProductDescriptionDetail = ({ activeIndex, handleOnClick, product, postQuestion, question }) => {
   return (
     <div className="product-details-area">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="tpproduct-details__navtab mb-60">
+              {/* {JSON.stringify(product)} */}
 
               {/* BUTTONs */}
               <div className="tpproduct-details__nav mb-30">
@@ -17,6 +19,9 @@ const ProductDescriptionDetail = ({ activeIndex, handleOnClick, product }) => {
                   </li>
                   <li className="nav-item" onClick={() => handleOnClick(3)}>
                     <button className={activeIndex == 3 ? "nav-links active" : "nav-links"}>Reviews ({product?.review?.length})</button>
+                  </li>
+                  <li className="nav-item" onClick={() => handleOnClick(2)}>
+                    <button className={activeIndex == 2 ? "nav-links active" : "nav-links"}>Q/A ({product?.question?.length})</button>
                   </li>
                 </ul>
               </div>
@@ -38,8 +43,14 @@ const ProductDescriptionDetail = ({ activeIndex, handleOnClick, product }) => {
                 </div>
 
                 {/* ADDITIONAL INFO */}
-                {/* <div className={activeIndex == 2 ? "tab-pane fade show active" : "tab-pane fade"}>
-                  <div className="product__details-info table-responsive">
+                <div className={activeIndex == 2 ? "tab-pane fade show active" : "tab-pane fade"}>
+                  <ProductQ_A
+                    product={product}
+                    question={question}
+                    postQuestion={postQuestion}
+
+                  />
+                  {/* <div className="product__details-info table-responsive">
                     <table className="table table-striped">
                       <tbody>
                         <tr>
@@ -80,8 +91,10 @@ const ProductDescriptionDetail = ({ activeIndex, handleOnClick, product }) => {
                         </tr>
                       </tbody>
                     </table>
-                  </div>
-                </div> */}
+                  </div> */}
+                </div>
+
+
                 <div className={activeIndex == 3 ? "tab-pane fade show active" : "tab-pane fade"}>
                   <div className="product-details-review">
                     <h3 className="tp-comments-title mb-35">{product?.review?.length} reviews for “{product?.name}”</h3>
@@ -135,7 +148,7 @@ const ProductDescriptionDetail = ({ activeIndex, handleOnClick, product }) => {
                                   </div>
                                   <p className="m-0">
                                     This is cardigan is a comfortable warm classic piece. Great to layer with a light top and you can
-                                    dress up or down given the jewel buttons. I'm 5'8” 128lbs a 34A and the Small fit fine.
+                                    dress up or down given the jewel buttons. Im 68 128lbs a 34A and the Small fit fine.
                                   </p>
                                 </div>
                               </div>

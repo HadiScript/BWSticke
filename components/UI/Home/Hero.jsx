@@ -30,10 +30,86 @@ export default function Hero() {
   const handleToggle = () => setToggled(!isToggled);
   return (
     <>
-      <section className="slider-area slider-bg-overlay pb-30 pt-60" style={{ backgroundColor: "black" }}  >
+      {/* style={{ backgroundColor: "black" }} */}
+      <section className="slider-area slider-bg-overlay pb-30 pt-60"   >
         <div className="container">
           <div className="row justify-content-xl-end">
+            <div className="col-xl-9 col-lg-9 align-items-center">
+
+              <div className="tp-slider-area p-relative">
+                <div className="swiper-container slider-active">
+                  <Swiper {...swiperOptions}>
+                    <SwiperSlide>
+                      <div className="tp-slide-item tpslider-item-5">
+                        <div className="tp-slide-item__content">
+                          <h4 className="tp-slide-item__sub-title">Quality Fresh Products</h4>
+                          <h3 className="tp-slide-item__title mb-25">
+                            Fresh Grocery <br /> Products.
+                          </h3>
+                          <Link className="tp-slide-item__slide-btn tp-btn" href="/shop-2">
+                            Shop Now <i className="fal fa-long-arrow-right" />
+                          </Link>
+                        </div>
+                        <div className="tp-slide-item__img">
+                          <img height={480} width={'100%'} src="/assets/img/slider/sliderone.jpg" alt="" />
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="tp-slide-item tpslider-item-5">
+                        <div className="tp-slide-item__content">
+                          <h4 className="tp-slide-item__sub-title">Quality Fresh Products</h4>
+                          <h3 className="tp-slide-item__title mb-25">
+                            Fresh Grocery <br /> Products.
+                          </h3>
+                          <Link className="tp-slide-item__slide-btn tp-btn" href="/shop-2">
+                            Shop Now <i className="fal fa-long-arrow-right" />
+                          </Link>
+                        </div>
+                        <div className="tp-slide-item__img">
+                          <img height={480} width={'100%'} src="/assets/img/slider/sliderone.jpg" alt="" />
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="tp-slide-item tpslider-item-5">
+                        <div className="tp-slide-item__content">
+                          <h4 className="tp-slide-item__sub-title">Quality Fresh Products</h4>
+                          <h3 className="tp-slide-item__title mb-25">
+                            Fresh Grocery <br /> Products.
+                          </h3>
+                          <Link className="tp-slide-item__slide-btn tp-btn" href="/shop-2">
+                            Shop Now <i className="fal fa-long-arrow-right" />
+                          </Link>
+                        </div>
+                        <div className="tp-slide-item__img">
+                          <img height={480} width={'100%'} src="/assets/img/slider/sliderone.jpg" alt="" />
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="tp-slide-item tpslider-item-5">
+                        <div className="tp-slide-item__content">
+                          <h4 className="tp-slide-item__sub-title">Quality Fresh Products</h4>
+                          <h3 className="tp-slide-item__title mb-25">
+                            Fresh Grocery <br /> Products.
+                          </h3>
+                          <Link className="tp-slide-item__slide-btn tp-btn" href="/shop-2">
+                            Shop Now <i className="fal fa-long-arrow-right" />
+                          </Link>
+                        </div>
+                        <div className="tp-slide-item__img">
+                          <img height={480} width={'100%'} src="/assets/img/slider/sliderone.jpg" alt="" />
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+                <div className="slider-pagination" />
+              </div>
+            </div>
             <div className="col-xl-3 d-none d-xl-block">
+
               <div className="row">
                 <div className="col-lg-12 col-md-6 col-sm-6">
                   <div className="tpslider-banner mb-30 tpbnner-height-5">
@@ -67,80 +143,8 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-            <div className="col-xl-6 col-lg-9 align-items-center">
-              <div className="tp-slider-area p-relative">
-                <div className="swiper-container slider-active">
-                  <Swiper {...swiperOptions}>
-                    <SwiperSlide>
-                      <div className="tp-slide-item tpslider-item-5">
-                        <div className="tp-slide-item__content">
-                          <h4 className="tp-slide-item__sub-title">Quality Fresh Products</h4>
-                          <h3 className="tp-slide-item__title mb-25">
-                            Fresh Grocery <br /> Products.
-                          </h3>
-                          <Link className="tp-slide-item__slide-btn tp-btn" href="/shop-2">
-                            Shop Now <i className="fal fa-long-arrow-right" />
-                          </Link>
-                        </div>
-                        <div className="tp-slide-item__img">
-                          <img height={480} width={'100%'} src="/imgs/hero/slider1.jpg" alt="" />
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <div className="tp-slide-item tpslider-item-5">
-                        <div className="tp-slide-item__content">
-                          <h4 className="tp-slide-item__sub-title">Quality Fresh Products</h4>
-                          <h3 className="tp-slide-item__title mb-25">
-                            Fresh Grocery <br /> Products.
-                          </h3>
-                          <Link className="tp-slide-item__slide-btn tp-btn" href="/shop-2">
-                            Shop Now <i className="fal fa-long-arrow-right" />
-                          </Link>
-                        </div>
-                        <div className="tp-slide-item__img">
-                          <img height={480} width={'100%'} src="/imgs/hero/slider2.jpg" alt="" />
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <div className="tp-slide-item tpslider-item-5">
-                        <div className="tp-slide-item__content">
-                          <h4 className="tp-slide-item__sub-title">Quality Fresh Products</h4>
-                          <h3 className="tp-slide-item__title mb-25">
-                            Fresh Grocery <br /> Products.
-                          </h3>
-                          <Link className="tp-slide-item__slide-btn tp-btn" href="/shop-2">
-                            Shop Now <i className="fal fa-long-arrow-right" />
-                          </Link>
-                        </div>
-                        <div className="tp-slide-item__img">
-                          <img height={480} width={'100%'} src="/imgs/hero/slider3.jpg" alt="" />
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <div className="tp-slide-item tpslider-item-5">
-                        <div className="tp-slide-item__content">
-                          <h4 className="tp-slide-item__sub-title">Quality Fresh Products</h4>
-                          <h3 className="tp-slide-item__title mb-25">
-                            Fresh Grocery <br /> Products.
-                          </h3>
-                          <Link className="tp-slide-item__slide-btn tp-btn" href="/shop-2">
-                            Shop Now <i className="fal fa-long-arrow-right" />
-                          </Link>
-                        </div>
-                        <div className="tp-slide-item__img">
-                          <img height={480} width={'100%'} src="/imgs/hero/slider4.jpg" alt="" />
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  </Swiper>
-                </div>
-                <div className="slider-pagination" />
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-3">
+
+            {/* <div className="col-xl-3 col-lg-3">
               <div className="row">
                 <div className="col-lg-12 col-md-6 col-sm-6">
                   <div className="tpslider-banner mb-30 tpbnner-height-5">
@@ -173,7 +177,7 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
 

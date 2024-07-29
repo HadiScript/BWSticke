@@ -163,6 +163,22 @@ const ProductDetail = ({ data, error }) => {
 
   const refreshData = () => router.replace(router.asPath);
 
+  async function postQuestion(e) {
+    try {
+      e.preventDefault();
+
+      const _data = {
+        pid: data.product._id,
+        question: question.current.value.trim(),
+      };
+      const _r = await postData("/api/question", _data);
+      _r.success ? (toast.success("Question Added Successfully"), refreshData()) : toast.error("Something Went Wrong 500");
+    } catch (err) {
+      console.log(err);
+      toast.error(`Something Went Wrong - ${err.message}`);
+    }
+  }
+
   useEffect(() => {
     if (data.product) {
       const cl = data.product.colors?.length || 0;
@@ -181,6 +197,9 @@ const ProductDetail = ({ data, error }) => {
   }, [selectedColor, selectedAttribute]);
 
 
+
+
+
   if (error) return <Error500 />;
   if (!data.product) return <Error404 />;
 
@@ -197,7 +216,7 @@ const ProductDetail = ({ data, error }) => {
         stepDownQty={stepDownQty}
         quantityAmount={quantityAmount}
       />
-      <ProductDescriptionDetail activeIndex={activeIndex} handleOnClick={handleOnClick} product={data.product} />
+      <ProductDescriptionDetail activeIndex={activeIndex} handleOnClick={handleOnClick} product={data.product} postQuestion={postQuestion} question={question} />
       <div className="related-product-area pt-65 pb-50 related-product-border">
         <TopProducts list={relatedItem} title={"Related Products"} />
       </div>

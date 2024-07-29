@@ -51,7 +51,7 @@ export default function TopProducts({ list, title }) {
   };
   return (
     <>
-      <section className="platinam-product-area pt-65">
+      <section className="platinam-product-area pt-65 pb-65">
         <div className="container">
           <div className="row">
 

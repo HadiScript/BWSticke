@@ -3,6 +3,7 @@ import TopHeader from "../Header/TopHeader";
 import DataBg from "../DataBg";
 import Footer from "../Home/Footer";
 import Sidebar from "../Header/Sidebar";
+import Navbar from "../Header/Navbar";
 
 
 const ClientLayout = ({ children, from, categories }) => {
@@ -39,7 +40,18 @@ const ClientLayout = ({ children, from, categories }) => {
   return (
     <>
       <DataBg />
-      <TopHeader categories={categories} scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} />
+      <Navbar
+        scroll={scroll}
+        isMobileMenu={isMobileMenu}
+        handleMobileMenu={handleMobileMenu}
+        isCartSidebar={isCartSidebar}
+        handleCartSidebar={handleCartSidebar}
+      />
+      {/* <TopHeader  scroll={scroll}
+          isMobileMenu={isMobileMenu}
+          handleMobileMenu={handleMobileMenu}
+          isCartSidebar={isCartSidebar}
+          handleCartSidebar={handleCartSidebar} /> */}
       <Sidebar isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} />
       {children}
 

@@ -101,14 +101,14 @@ const SignIn = () => {
                       <span>
                         <i className="fal fa-user" />
                       </span>
-                      <input type="email" ref={email} placeholder="Email" />
+                      <input className="form-control" type="email" ref={email} placeholder="Email" />
                     </div>
                     <div className="tptrack__email mb-10">
 
                       <span>
                         <i className="fal fa-key" />
                       </span>
-                      <input type="text" ref={password} placeholder="Password" />
+                      <input className="form-control" type="text" ref={password} placeholder="Password" />
 
                     </div>
                     <div className="tpsign__remember d-flex align-items-center justify-content-between mb-15">

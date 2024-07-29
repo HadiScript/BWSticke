@@ -14,7 +14,7 @@ export default function TopHeader({ scroll, isMobileMenu, handleMobileMenu, cate
     <>
       <header className="top-header ">
         <SmallTopHeader />
-        <MainHeader categories={categories}/>
+        <MainHeader categories={categories} />
       </header>
       <StickyHeader scroll={scroll} />
 

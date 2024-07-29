@@ -80,15 +80,16 @@ function MyApp({ Component, pageProps }) {
 
       {/* toast notifications */}
       <ToastContainer
-        position="top-right"
+        position="top-center"
         autoClose={2000}
-        hideProgressBar
-        newestOnTop={true}
+        hideProgressBar={false}
+        newestOnTop={false}
         closeOnClick
-        draggable
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={true}
         pauseOnHover
-        theme="colored"
-        transition={Flip}
+        theme="light"
       />
     </SessionProvider>
   );

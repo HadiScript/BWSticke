@@ -1,3 +1,4 @@
+import ImageLoader from "~/components/UI/Common/ImageLoader"
 import ClientLayout from "~/components/UI/Layouts/ClientLayout"
 
 
@@ -10,7 +11,14 @@ const Track = () => {
             <div className="col-md-7">
               <div className="tptrack__product">
                 <div className="tptrack__thumb">
-                  <img src="/assets/img/banner/track-bg.jpg" alt="" />
+                  <ImageLoader
+                    src={`${process.env.NEXT_PUBLIC_URL}/imgs/extra/track.webp`}
+                    // src={cat.icon[0]?.url}
+                    alt={"tracking_image"}
+                    width={600}
+                    height={300}
+                  />
+                  {/* <img src="/assets/img/banner/track-bg.jpg" alt="" /> */}
                 </div>
                 <div className="tptrack__content grey-bg-3">
                   <div className="tptrack__item d-flex mb-20">
@@ -19,7 +27,7 @@ const Track = () => {
                     </div>
                     <div className="tptrack__item-content">
                       <h4 className="tptrack__item-title">Track Your Order</h4>
-                      <p>To track your order please enter your Order ID in the box below and press the "Track" button. This was  given to you on your receipt and in the confirmation email you should have received.</p>
+                      <p>To track your order please enter your Order ID in the box below and press the Track button. This was  given to you on your receipt and in the confirmation email you should have received.</p>
                     </div>
                   </div>
                   <div className="tptrack__id mb-10">
@@ -28,7 +36,7 @@ const Track = () => {
                       <input type="text" placeholder="Your order refrence no" />
                     </form>
                   </div>
-                  
+
                   <div className="tptrack__btn">
                     <button className="tptrack__submition">Track Now<i className="fal fa-long-arrow-right" /></button>
                   </div>

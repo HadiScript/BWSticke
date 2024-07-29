@@ -1,3 +1,5 @@
+
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -12,13 +14,12 @@ export default function Footer() {
                   <div className="footer-widget footer-col-1 mb-40">
                     <div className="footer-logo mb-30">
                       <Link href="/">
-                        <img src="/assets/img/logo/logo.png" alt="logo" />
+                        <Image height={100} width={200} src="/assets/img/logo/red-white.svg" alt="logo" />
                       </Link>
                     </div>
                     <div className="footer-content">
                       <p>
-                        Elegant pink origami design three <br /> dimensional view and decoration co-exist.
-                        <br /> Great for adding a decorative touch to <br /> any room’s decor.
+                        Nottingham UK.
                       </p>
                     </div>
                   </div>
@@ -29,10 +30,10 @@ export default function Footer() {
                     <div className="footer-widget__links">
                       <ul>
                         <li>
-                          <Link href="#">Custom Service</Link>
+                          <Link href="/about-us">About Us</Link>
                         </li>
                         <li>
-                          <Link href="#">FAQs</Link>
+                          <Link href="/faqs">FAQs</Link>
                         </li>
                         <li>
                           <Link href="/track">Ordering Tracking</Link>
@@ -41,7 +42,7 @@ export default function Footer() {
                           <Link href="/contact">Contacts</Link>
                         </li>
                         <li>
-                          <Link href="#">Events</Link>
+                          <Link href="/become-a-partner">Become a Partner</Link>
                         </li>
                       </ul>
                     </div>
@@ -58,12 +59,12 @@ export default function Footer() {
                         <li>
                           <Link href="#">Privacy Policy</Link>
                         </li>
-                        <li>
+                        {/* <li>
                           <Link href="#">Discount</Link>
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                           <Link href="#">Custom Service</Link>
-                        </li>
+                        </li> */}
                         <li>
                           <Link href="#">Terms Condition</Link>
                         </li>
@@ -135,31 +136,21 @@ export default function Footer() {
                       <i className="far fa-phone" />
                     </div>
                     <div className="footer-cta__text">
-                      <Link href="/tel:0123456">980. 029. 666. 99</Link>
-                      <span>Working 8:00 - 22:00</span>
+                      <Link href="/tel:+447446498337" className="my-2">+44 7446 498337 (UK)</Link>
+                      <Link href="/tel:+447446498337" className="my-2">+44 7446 498337 (Globally)</Link>
+                      {/* <span>Working 8:00 - 22:00</span> */}
                     </div>
                   </div>
                 </div>
-                <div className="col-xl-6 col-lg-8 col-md-8 col-sm-6">
-                  <div className="footer-cta__source">
-                    <div className="footer-cta__source-content">
-                      <h4 className="footer-cta__source-title">Download App on Mobile</h4>
-                      <p>15% discount on your first purchase</p>
-                    </div>
-                    <div className="footer-cta__source-thumb">
-                      <Link href="#">
-                        <img src="/assets/img/footer/f-google.jpg" alt="google" />
-                      </Link>
-                      <Link href="#">
-                        <img src="/assets/img/footer/f-app.jpg" alt="app" />
-                      </Link>
-                    </div>
+                <div className="col-xl-6 col-lg-4 col-md-4 col-sm-6 text-white text-end">
+                  <div className="" style={{ fontSize: "16px" }}>
+                    Copyright 2024 BWSTRIKE. All rights reserved. Developed by HadiScripts.
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="footer-copyright footer-bg">
+          {/* <div className="footer-copyright footer-bg">
             <div className="container">
               <div className="row">
                 <div className="col-xl-6 col-lg-7 col-md-5 col-sm-12">
@@ -177,7 +168,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </footer>
     </>

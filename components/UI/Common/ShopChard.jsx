@@ -63,14 +63,14 @@ const ShopCard = ({ product, addToCart, addToWishlist }) => {
 
   return (
     <>
-      <div className="tpratingitem tpproduct text-center">
+      {/* <div className="tpratingitem tpproduct text-center">
         <div className="tpproduct__thumb p-relative">
           <Link href={`/shop/$`}>
             <ImageLoader
               src={`${process.env.NEXT_PUBLIC_URL}/imgs/products/8.jpg`}
               // src={product.image[0]?.url}
               alt={product.name}
-              width={300}
+              width={250}
               height={200}
               style={{ width: "100%", height: "auto" }}
               quality={100}
@@ -103,26 +103,17 @@ const ShopCard = ({ product, addToCart, addToWishlist }) => {
             <span>81 Reviews</span>
           </div>
         </div>
-      </div>
-      {/* <div className="tpproduct tpproductitem mb-15 p-relative">
+      </div> */}
+      <div className="tpproduct tpproductitem mb-45 p-relative">
         <div className="tpproduct__thumb">
           <div className="tpproduct__thumbitem p-relative">
             <Link href={`/shop/${product.id}`}>
               <ImageLoader
-                src={`${process.env.NEXT_PUBLIC_URL}/imgs/products/8.jpg`}
+                src={`${process.env.NEXT_PUBLIC_URL}/imgs/products/9.jpg`}
                 // src={product.image[0]?.url}
                 alt={product.name}
                 width={300}
-                height={200}
-                style={{ width: "100%", height: "auto" }}
-                quality={100}
-              />
-              <ImageLoader
-                src={product.image[1]?.url}
-                alt={product.name}
-                width={200}
-                height={200}
-                className="thumbitem-secondary"
+                height={300}
                 style={{ width: "100%", height: "auto" }}
                 quality={100}
               />
@@ -132,9 +123,9 @@ const ShopCard = ({ product, addToCart, addToWishlist }) => {
                 <a onClick={() => addToCart(product.id)} className="add-to-cart">
                   <i className="fal fa-shopping-basket" />
                 </a>
-                <Link href="#">
+                <a onClick={addToCompareList}>
                   <i className="fal fa-exchange" />
-                </Link>
+                </a>
                 <Link href="#">
                   <i className="fal fa-eye" />
                 </Link>
@@ -147,11 +138,11 @@ const ShopCard = ({ product, addToCart, addToWishlist }) => {
         </div>
         <div className="tpproduct__content-area">
           <h3 className="tpproduct__title mb-5">
-            <Link href={`/shop/${product.id}`}>{product.title}</Link>
+            <Link href={`/product/${product?.slug}`}>{product?.name}</Link>
           </h3>
           <div className="tpproduct__priceinfo p-relative">
             <div className="tpproduct__ammount">
-              <span>${product.price.max}.00</span>
+              <span>${product.price}.00</span>
             </div>
           </div>
         </div>
@@ -209,7 +200,7 @@ const ShopCard = ({ product, addToCart, addToWishlist }) => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

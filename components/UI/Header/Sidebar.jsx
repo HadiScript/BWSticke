@@ -9,7 +9,7 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
           Close
           <i className="fal fa-times ml-10" />
         </button>
-        <div className="tpsideinfo__search text-center pt-35">
+        {/* <div className="tpsideinfo__search text-center pt-35">
           <span className="tpsideinfo__search-title mb-20">What Are You Looking For?</span>
           <form action="#">
             <input type="text" placeholder="Search Products..." />
@@ -17,9 +17,9 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
               <i className="fal fa-search" />
             </button>
           </form>
-        </div>
-        <div className="tpsideinfo__nabtab">
-          <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        </div> */}
+        <div className="tpsideinfo__nabtab pt-35">
+          {/* <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li className="nav-item" role="presentation">
               <button
                 className="nav-link active"
@@ -48,7 +48,7 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
                 Categories
               </button>
             </li>
-          </ul>
+          </ul> */}
           <div className="tab-content" id="pills-tabContent">
             <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabIndex={0}>
               <MobileMenu />
@@ -76,7 +76,10 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
             </div>
           </div>
         </div>
-        <div className="tpsideinfo__account-link mt-3">
+
+        <div className="mt-65"></div>
+
+        <div className="tpsideinfo__account-link ">
           <Link href="/sign-in">
             <i className="fal fa-user" /> Login / Register
           </Link>

@@ -20,19 +20,19 @@ export default function MobileMenu() {
             <ul>
               <li className="">
                 <Link href="/">Home</Link>
-
               </li>
               <li className="">
                 <Link href="/collections">Collections</Link>
+
               </li>
               <li className="">
-                <Link href="/order-tracking">Order Tracking</Link>
+                <Link href="/categories">Categories</Link>
               </li>
-              <li className="">
-                <Link href="/blogs">Blogs</Link>
+              <li className="/about">
+                <Link href="/track">Track</Link>
               </li>
-              <li className="">
-                <Link href="/contact">Contact</Link>
+              <li>
+                <Link href="/contact">Become a Partner</Link>
               </li>
             </ul>
           </nav>

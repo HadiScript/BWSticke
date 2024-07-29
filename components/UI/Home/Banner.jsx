@@ -13,9 +13,9 @@ const Banner = () => {
                 <Link href="/shop-2">
                   <i className="far fa-long-arrow-right" />
                 </Link>
-                <p>13 Items</p>
+                <p>Top Category</p>
                 <h4 className="banneritem__content-tiele">
-                  <Link href="/shop">New Added</Link>
+                  <Link href="/shop" className="text-white">New Added</Link>
                 </h4>
               </div>
             </div>
@@ -29,7 +29,7 @@ const Banner = () => {
                 </Link>
                 <p>13 Items</p>
                 <h4 className="banneritem__content-tiele">
-                  <Link href="/shop">New Added</Link>
+                  <Link href="/shop" className="text-white">New Added</Link>
                 </h4>
               </div>
             </div>
@@ -43,7 +43,7 @@ const Banner = () => {
                 </Link>
                 <p>13 Items</p>
                 <h4 className="banneritem__content-tiele">
-                  <Link href="/shop">New Added</Link>
+                  <Link href="/shop" className="text-white">New Added</Link>
                 </h4>
               </div>
             </div>

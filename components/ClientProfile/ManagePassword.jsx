@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { postData } from "~/lib/clientFunctions";
 
-const ManagePassword = () => {
+const ManagePassword = ({ id }) => {
 
 
   const [loading, setLoading] = useState("");
@@ -22,7 +22,7 @@ const ManagePassword = () => {
       const userData = {
         password: password.current.value.trim(),
       };
-      const response = await postData(`/api/profile?scope=password&id=${props.id}`, userData);
+      const response = await postData(`/api/profile?scope=password&id=${id}`, userData);
       response.success ? (toast.success("Password Updated Successfully"), form.current.reset()) : toast.error("Something Went Wrong (500)");
       setLoading("");
     } catch (err) {
@@ -38,23 +38,19 @@ const ManagePassword = () => {
     <div className="px-2">
       <div className="tpcontact__form">
         <div className="tpcontact__info mb-35">
-          <h4 className="tpcontact__title">Manage Your Password</h4>
+          <h4 className="">Manage Your Password</h4>
         </div>
-        <form onSubmit={updateUserInfo}>
+        <form onSubmit={updateUserInfo} ref={form}>
           <div className="row">
             <div className="col-lg-12">
-              <div className="tpcontact__input mb-20">
-                <input type="text" placeholder="Password" required ref={password} />
-              </div>
+              <input className='form-control mb-20' type="text" placeholder="Password" required ref={password} />
             </div>
             <div className="col-lg-12">
-              <div className="tpcontact__input mb-20">
-                <input type="text" placeholder="Confirm Password" ref={passwordRef} required />
-              </div>
+              <input type="text" className='form-control mb-20' placeholder="Confirm Password" ref={passwordRef} required />
             </div>
           </div>
           <div className="tpcontact__submit">
-            <Button>Save</Button>
+            <Button type="submit" className="myBtn-black" loading={loading} style={{ width: "100%" }}>Save</Button>
           </div>
         </form>
         <p className="ajax-response mt-30" />

@@ -38,7 +38,13 @@ const Categories = ({ data, error }) => {
                 data?.category?.map((cat, index) => (
                   <div key={index} className="col-xxl-3 col-lg-6 col-md-6">
                     <div className="tpselectproduct">
-                      <ImageLoader src={cat.icon[0]?.url} alt={cat.name} width={60} height={60} />
+                      <ImageLoader
+                        src={`${process.env.NEXT_PUBLIC_URL}/imgs/products/9.jpg`}
+                        // src={cat.icon[0]?.url}
+                        alt={cat.name}
+                        width={60}
+                        height={60}
+                      />
                       <h4 className="tpselectproduct__heading mb-35 mt-5">
                         <Link href={`/collections?category=${cat.slug}`}>
                           {cat.name}

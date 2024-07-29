@@ -16,29 +16,29 @@ const Contact = () => {
                     <div className="tpshop__info">
                       <ul>
                         <li>
-                          <i className="fal fa-map-marker-alt" /> <Link href="#">24/26 Strait Bargate, Boston, PE21, United Kingdom</Link>
+                          <i className="fal fa-map-marker-alt" /> <Link href="#">Nottingham UK</Link>
                         </li>
                         <li>
                           <i className="fal fa-phone" />
-                          <Link href="/tel:0123456789">+098 (905) 786 897 8</Link>
-                          <Link href="/tel:0123456789">6 - 146 - 389 - 5748</Link>
+                          <Link href="/tel:+44 7446 498337">+44 7446 498337</Link>
+                          <Link href="/tel:+1 (771) 218-2087">+1 (771) 218-2087</Link>
                         </li>
-                        <li>
+                        {/* <li>
                           <i className="fal fa-clock" />
                           <span>Store Hours:</span>
                           <span>10 am - 10 pm EST, 7 days a week</span>
-                        </li>
+                        </li> */}
                       </ul>
                     </div>
                   </div>
-                  <div className="tpcontact__support">
+                  {/* <div className="tpcontact__support">
                     <Link href="/tel:0123456">
                       Get Support On Call <i className="fal fa-headphones" />
                     </Link>
                     <Link target="_blank" href="https://www.google.com/maps/@36.963672,-119.2249843,7.17z">
                       Get Direction <i className="fal fa-map-marker-alt" />
                     </Link>
-                  </div>
+                  </div>   */}
                 </div>
               </div>
               <div className="col-lg-8 col-12">

@@ -7,10 +7,7 @@ export default async function apiHandler(req, res) {
   const { method } = req;
   const secret = process.env.AUTH_SECRET;
   const session = await getToken({ req, secret });
-  if (!session)
-    return res
-      .status(403)
-      .json({ success: false, message: "Access Forbidden" });
+  if (!session) return res.status(403).json({ success: false, message: "Access Forbidden" });
 
   await dbConnect();
 
@@ -41,16 +38,10 @@ export default async function apiHandler(req, res) {
         const data = req.body;
         data.user = session.user.id;
         if (data.addressType === "main address") {
-          await AddressModel.updateMany(
-            { user: session.user.id },
-            { $set: { addressType: "address" } }
-          );
+          await AddressModel.updateMany({ user: session.user.id }, { $set: { addressType: "address" } });
         }
         const newAddress = await AddressModel.create(data);
-        await UserModel.updateOne(
-          { _id: session.user.id },
-          { $push: { address: newAddress._id } }
-        );
+        await UserModel.updateOne({ _id: session.user.id }, { $push: { address: newAddress._id } });
         res.status(200).json({ success: true });
       } catch (err) {
         console.log(err);
@@ -61,13 +52,12 @@ export default async function apiHandler(req, res) {
     case "PUT":
       try {
         const data = req.body;
+
         if (data.addressType === "main address") {
-          await AddressModel.updateMany(
-            { user: session.user.id },
-            { $set: { addressType: "address" } }
-          );
+          await AddressModel.updateMany({ user: session.user.id }, { $set: { addressType: "address" } });
         }
         const r = await AddressModel.updateOne({ _id: data._id }, data);
+        // console.log(r, "here is the data");
         res.status(200).json({ success: r.modifiedCount > 0 });
       } catch (err) {
         console.log(err);
@@ -78,10 +68,7 @@ export default async function apiHandler(req, res) {
     case "DELETE":
       try {
         await AddressModel.findByIdAndDelete(req.body.id);
-        await UserModel.updateOne(
-          { _id: session.user.id },
-          { $pull: { address: req.body.id } }
-        );
+        await UserModel.updateOne({ _id: session.user.id }, { $pull: { address: req.body.id } });
         res.status(200).json({ success: true });
       } catch (err) {
         console.log(err);

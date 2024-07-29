@@ -1,488 +1,80 @@
+import Image from "next/image";
 import Link from "next/link";
 
-export default function TopCategory() {
+export default function TopCategories() {
   return (
     <>
-      <section className="selected-product-area pt-95 pb-100">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="tpsection mb-40">
-                <h4 className="tpsection__title">
-                  Top{" "}
-                  <span>
-                    {" "}
-                    Categories <img src="/assets/img/icon/title-shape-01.jpg" alt="" />
-                  </span>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-xxl-3 col-lg-6 col-md-6">
-              <div className="tpselectproduct">
-                <h4 className="tpselectproduct__heading mb-35">Biscuit Snacks</h4>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-1.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
+      <section className="banner-area pt-15">
+        <div className="bannerborder">
+          <div className="container-fluid">
+            <div className="row gx-3">
+              <div className="col-lg-4 col-md-12">
+                <div className="banneritem banneroverlay p-relative">
+                  <Image src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/4cats/big-1.webp`} alt="big-2" height={585} width={2000} />
+                  <div className="bannertext text-center">
+                    <span className="bannertext__subtitle">Sports  Color</span>
+                    <h4 className="bannertext__title mb-40">
+                      <Link href="/shop-2">
+                        Reactive Providence <br /> Sports  Color
                       </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
+                    </h4>
+                    <div className="bannertext__btn tpexclusive__btn">
+                      <Link href="/shop" className="tp-btn  banner-animation">
+                        Shop Now
                       </Link>
                     </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Miko Wooden Bluetooth Speaker</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-3.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Gorgeous Wooden Gloves</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-5.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Pinkol Enormous Granite Bottle</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-7.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Gorgeous Aluminum Table</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-xxl-3 col-lg-6 col-md-6">
-              <div className="tpselectproduct">
-                <h4 className="tpselectproduct__heading mb-35">Chocolate</h4>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-9.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
+              <div className="col-lg-4 col-md-12">
+                <div className="banneritem banner-animation mb-15 p-relative">
+                  <Image src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/4cats/small-1.webp`} alt="small-2" height={285} width={2000} />
+                  <div className="bannerbox">
+                    <span className="bannerbox__subtitle">Gloves</span>
+                    <h4 className="bannerbox__title mb-95 text-white">
+                      <Link href="/shop-2">
+                        New Modern <br /> Gloves
                       </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
+                    </h4>
+                    <div className="bannerbox__btn">
+                      <Link className="tp-btn banner-animation mr-25" href="/shop-2">
+                        Shop Now
+                        <i className="fal fa-long-arrow-right" />
                       </Link>
                     </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Evo Lightweight Granite Shirt</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
                   </div>
                 </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-11.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
+                <div className="banneritem banner-animation p-relative">
+                  <Image src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/4cats/small-2.webp`} alt="small-1" height={285} width={2000} />
+
+                  <div className="bannerbox">
+                    <h4 className="bannerbox__title banner-bottom-title text-white">
+                      <Link href="/shop">50% Offer On</Link>
+                    </h4>
+                    <span className="bannerbox__subtitle banner-bottom-bg mb-130">
+                      Intensive <Link href="/shop">Gloves</Link>
+                    </span>
+                    <div className="bannerbox__btn">
+                      <Link className="tp-btn banner-animation mr-25" href="/shop-2">
+                        Shop Now
+                        <i className="fal fa-long-arrow-right" />
                       </Link>
                     </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">CLCo. Incredible Paper Car</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-13.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Miko Wooden Bluetooth Speaker</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-15.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Progash Durable Granite Hat</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-xxl-3 col-lg-6 col-md-6">
-              <div className="tpselectproduct">
-                <h4 className="tpselectproduct__heading mb-35">Shakes Biscuit</h4>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-17.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
+              <div className="col-lg-4 col-md-12">
+                <div className="banneritem banner-animation p-relative">
+                  <Image src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/4cats/big-2.webp`} alt="big-1" height={585} width={2000} />
+
+                  <div className="bannerbox">
+                    <span className="bannerbox__subtitle banner-right-bg mb-200">Featured Sports Product</span>
+                    <div className="bannerbox__btn">
+                      <Link className="tp-btn banner-animation mr-25" href="/shop-2">
+                        Shop Now
+                        <i className="fal fa-long-arrow-right" />
                       </Link>
                     </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Miko Wooden Bluetooth Speaker</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-19.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Pinkol Enormous Granite Bottle</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-21.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Progash Durable Granite Hat</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-22.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Miko Wooden Bluetooth Speaker</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xxl-3 col-lg-6 col-md-6">
-              <div className="tpselectproduct">
-                <h4 className="tpselectproduct__heading mb-35">Cake Honey</h4>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-23.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Miko Wooden Bluetooth Speaker</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-24.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Miko Wooden Bluetooth Speaker</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-25.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Gorgeous Wooden Gloves</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
-                  </div>
-                </div>
-                <div className="tpselectproduct__item d-flex align-items-center mb-25">
-                  <div className="tpselectproduct__thumb mr-25">
-                    <img src="assets/img/product/home-five/product-9.jpg" alt="thumb" />
-                  </div>
-                  <div className="tpselectproduct__content">
-                    <div className="tpselectproduct__rating">
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                      <Link className="max-star" href="#">
-                        <i className="fas fa-star" />
-                      </Link>
-                    </div>
-                    <h4 className="tpselectproduct__title">
-                      <Link href="/shop-details-2">Purab Enormous Miranda Bottle</Link>
-                    </h4>
-                    <h5 className="tpselectproduct__price">$31.00</h5>
                   </div>
                 </div>
               </div>

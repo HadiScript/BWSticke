@@ -1,4 +1,5 @@
 import Link from "next/link"
+import ImageLoader from "./ImageLoader";
 
 const MainProductDetail = ({ handleOnClick2, activeIndex2, product, addItemToCart, changeColor, stepUpQty, stepDownQty, quantityAmount }) => {
 
@@ -12,7 +13,15 @@ const MainProductDetail = ({ handleOnClick2, activeIndex2, product, addItemToCar
               <div className="d-flex align-items-start">
                 <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                   {product?.gallery?.map((item, index) => <button key={index} className={activeIndex2 == index ? "nav-link active" : "nav-link"} onClick={() => handleOnClick2(index)}>
-                    <img src="/assets/img/product/product-1.jpg" alt="" />
+                    {/* <img src="/assets/img/product/product-1.jpg" alt="" /> */}
+                    <ImageLoader
+                      src={`${process.env.NEXT_PUBLIC_URL}/imgs/products/9.jpg`}
+                      // src={item.image[0]?.url}
+                      // height={90}
+                      // width={90}
+                      alt={item.name}
+                      className={"rounded"}
+                    />
                   </button>
                   )}
                   {/* <button className={activeIndex2 == 4 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick2(4)}>
@@ -27,7 +36,15 @@ const MainProductDetail = ({ handleOnClick2, activeIndex2, product, addItemToCar
                 </div>
                 <div className="tab-content" id="v-pills-tabContent">
                   {product?.gallery?.map((item, index) => <div key={index} className={activeIndex2 == index ? "tab-pane fade show active" : "tab-pane fade"}>
-                    <img src="/assets/img/product/product-1.jpg" alt="" />
+                    <ImageLoader
+                      src={`${process.env.NEXT_PUBLIC_URL}/imgs/products/9.jpg`}
+                      // src={item.image[0]?.url}
+                      height={500}
+                      width={500}
+                      alt={item.name}
+                      className={"rounded"}
+                    />
+                    {/* <img src="/assets/img/product/product-1.jpg" alt="" /> */}
                     {/* item.url */}
                   </div>
                   )}

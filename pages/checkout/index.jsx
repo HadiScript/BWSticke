@@ -1,3 +1,4 @@
+import { Button, Tag } from "antd";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
@@ -313,7 +314,7 @@ const Checkout = () => {
       <div>
         <div className="mb-3">
           <div className={"checkbox-form"}>
-            <h5>Select Delivery Type*</h5>
+            <h6>Select Delivery Type*</h6>
             <select
               className="form-control mb-3"
               defaultValue=""
@@ -330,7 +331,7 @@ const Checkout = () => {
             </select>
             {deliveryInfo.type && deliveryInfo.type === "Local Delivery" && (
               <div>
-                <label>Select Delivery Area*</label>
+                <h6>Select Delivery Type*</h6>
                 <select
                   className="form-control mb-3"
                   defaultValue=""
@@ -372,10 +373,19 @@ const Checkout = () => {
               selectPaymentMethod={selectPaymentMethod}
               submitOrder={submitOrder}
               settings={settings}
-
             />
 
-            <Details />
+            <Details
+              cartData={cartData}
+              currencySymbol={currencySymbol}
+              getTotalPrice={getTotalPrice}
+              getTotalTax={getTotalTax}
+              getTotalVat={getTotalVat}
+              discountPrice={discountPrice}
+              deliveryInfo={deliveryInfo}
+              finalPrice={finalPrice}
+
+            />
 
           </div>
         </div>
@@ -389,43 +399,81 @@ const Checkout = () => {
   function billingInfoJsx() {
     return (
       <div className="mt-50 border rounded-2 px-4">
-        {session && (
-          <div className="d-flex justify-content-end ">
-            <button
-              className={""}
-              onClick={() => setNewCustomer(true)}
-              type="button"
-            >
-              Add Address
-            </button>
-          </div>
-        )}
-        <div className="mb-3">
-          <div className="checkbox-form">
-            <h5 className={""}>Billing Info</h5>
-          </div>
+
+        {/* heading */}
+        <div className="d-flex justify-content-between align-items-center pt-3">
+
+          <h6 className={""}>Billing Info</h6>
+
+
+          {session && (
+            <div className="d-flex justify-content-end ">
+              <Button
+                className={""}
+                onClick={() => setNewCustomer(true)}
+                type="dashed"
+              >
+                Add Address
+              </Button>
+            </div>
+          )}
+        </div>
+
+
+
+        <div className="mb-3 mt-3" >
+
           <div className={"d-flex flex-wrap gap-2"}>
             {_address.map((x, i) => (
-              <label className={"d-flex flex-column gap-2 align-items-start border rounded-3 p-3"} style={{ width: "200px" }} key={i}>
+
+              <div className={"d-flex flex-column gap-2 align-items-start "} style={{ width: "200px" }} key={i}>
+                {/* <input
+                    type="radio"
+                    name="billing_address"
+                    value={x._id}
+                    defaultChecked={x._id === addressId}
+                    onChange={() => selectInfo(x._id, "billing_address")}
+                  />
+                  <div
+                    className={``}
+                  >
+                    <small style={{ fontSize: "13px" }}>{x.name}</small>
+                    <small style={{ fontSize: "13px" }}>{x.phone}</small>
+                    <small style={{ fontSize: "13px" }}>{`${x.house} ${x.state} ${x.zipCode} ${x.country}`}</small>
+                    <br />
+                    {x.addressType === "main address" && (
+                      <Tag color="blue">default</Tag>
+                    )}
+                  </div>
+                </label> */}
+
+
+
                 <input
-                  type="radio"
                   name="billing_address"
                   value={x._id}
                   defaultChecked={x._id === addressId}
                   onChange={() => selectInfo(x._id, "billing_address")}
+
+                  type="radio"
+                  className="btn-check"
+                  id="success-outlined"
+                  autocomplete="off"
                 />
-                <div
-                  className={``}
-                >
-                  <small style={{ fontSize: "13px" }}>{x.name}</small>
-                  <small style={{ fontSize: "13px" }}>{x.phone}</small>
-                  <small style={{ fontSize: "13px" }}>{`${x.house} ${x.state} ${x.zipCode} ${x.country}`}</small>
-                  <br />
-                  {x.addressType === "main address" && (
-                    <small className="text-primary">default</small>
-                  )}
-                </div>
-              </label>
+                <label className="btn btn-outline-success" for="success-outlined">
+                  <div
+                    className={`d-flex flex-column align-items-start`}
+                  >
+                    <small style={{ fontSize: "13px" }}>{x.name}</small>
+                    <small style={{ fontSize: "13px" }}>{x.phone}</small>
+                    <small className="text-start my-2" style={{ fontSize: "13px" }}>{`${x.house} ${x.state} ${x.zipCode} ${x.country}`}</small>
+                    <br />
+                    {x.addressType === "main address" && (
+                      <Tag color="blue">default</Tag>
+                    )}
+                  </div>
+                </label>
+              </div>
             ))}
           </div>
           <div className="py-2 mt-4 form-check">
@@ -441,7 +489,7 @@ const Checkout = () => {
           </div>
         </div>
 
-        <AddAddress open={newCustomer} setOpen={setNewCustomer} />
+        {/* <AddAddress open={newCustomer} setOpen={setNewCustomer} /> */}
       </div>
     );
   }
@@ -453,10 +501,11 @@ const Checkout = () => {
       <div className="mt-50 border rounded-2 px-4 py-3">
         <div className="mb-3">
           <h5>Shipping Info</h5>
-          <div className={""}>
+          <div className={"d-flex flex-wrap gap-2"}>
             {_address.map((x, i) => (
-              <label className={""} key={i}>
-                <input
+              <div className={"d-flex flex-column gap-2 align-items-start "} style={{ width: "200px" }} key={i}>
+                {/*
+                 <input
                   type="radio"
                   name="shipping_address"
                   value={x._id}
@@ -466,14 +515,42 @@ const Checkout = () => {
                 <div
                   className={``}
                 >
-                  <span>{x.name}</span>
-                  <span>{x.phone}</span>
-                  <span>{`${x.house} ${x.state} ${x.zipCode} ${x.country}`}</span>
+                  <small style={{ fontSize: "13px" }}>{x.name}</small>
+                  <small style={{ fontSize: "13px" }}>{x.phone}</small>
+                  <small style={{ fontSize: "13px" }}>{`${x.house} ${x.state} ${x.zipCode} ${x.country}`}</small>
+                  <br />
                   {x.addressType === "main address" && (
-                    <div className="badge bg-primary">default</div>
+                    <Tag color="blue">default</Tag>
                   )}
                 </div>
-              </label>
+                
+                */}
+
+                <input
+                  name="shipping_address"
+                  value={x._id}
+                  defaultChecked={x._id === shippingId}
+                  onChange={() => selectInfo(x._id, "shipping_address")}
+
+                  type="radio"
+                  className="btn-check"
+                  id="success-outlined"
+                  autocomplete="off"
+                />
+                <label className="btn btn-outline-success" for="success-outlined">
+                  <div
+                    className={`d-flex flex-column align-items-start`}
+                  >
+                    <small style={{ fontSize: "13px" }}>{x.name}</small>
+                    <small style={{ fontSize: "13px" }}>{x.phone}</small>
+                    <small className="text-start my-3" style={{ fontSize: "13px" }}>{`${x.house} ${x.state} ${x.zipCode} ${x.country}`}</small>
+                    <br />
+                    {x.addressType === "main address" && (
+                      <Tag color="blue">default</Tag>
+                    )}
+                  </div>
+                </label>
+              </div>
             ))}
           </div>
         </div>

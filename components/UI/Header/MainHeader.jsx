@@ -3,14 +3,15 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import SearchingDrawer from '../Common/SearchingDrawer'
+import Image from 'next/image'
 
 export const Logo = () =>
   <div className="col-xl-2 col-lg-3">
     <div className="logo">
-      <span style={{ fontWeight: "550" }}>BW Strike.</span>
-      {/* <Link href="/">
-        <img src="/assets/img/logo/logo.png" alt="logo" />
-      </Link> */}
+      {/* <span style={{ fontWeight: "550" }}>BW Strike.</span> */}
+      <Link href="/">
+        <Image height={80} width={110} src="/assets/img/logo/red-white.svg" alt="logo" />
+      </Link>
     </div>
   </div>
 
@@ -38,7 +39,7 @@ export const MenuLinks = ({ categories }) => <div className="col-xl-6 col-lg-6">
         </li>
 
         <li className="">
-          <Link href="/order-tracking">Order Tracking</Link>
+          <Link href="/track">Order Tracking</Link>
         </li>
         <li>
           <Link href="/blogs">Blogs</Link>
@@ -62,9 +63,11 @@ export const Icons = ({ handleCartSidebar, session }) => {
           <div className="header-meta__social  d-flex align-items-center ">
             <Link href={'/cart'} className="header-cart p-relative tp-cart-toggle" onClick={handleCartSidebar}>
               <i className="fal fa-shopping-cart" />
+              <span className="tp-product-count">9</span>
             </Link>
             <Link href="/wishlist" className="header-cart p-relative tp-cart-toggle">
               <i className="fal fa-heart" />
+              <span className="tp-product-count">9</span>
             </Link>
             <div role='button' onClick={() => setOpen(true)} className="other header-cart p-relative tp-cart-toggle text-white">
               <i className="fal fa-search" />

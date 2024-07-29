@@ -31,7 +31,11 @@ const CheckoutForms = (
               <div className={""}>
                 {billingInfoJsx()}
                 {!sameShippingAddressValue && shippingInfoJsx()}
-                <button type="submit">Continue</button>
+                <div className="order-button-payment mt-20">
+                  <button type="submit" className="tp-btn tp-color-btn w-100 banner-animation">
+                    Continue
+                  </button>
+                </div>
               </div>
             </form>
 

@@ -69,27 +69,27 @@ const SignUp = () => {
                       <span>
                         <i className="fal fa-user" />
                       </span>
-                      <input ref={name} type="text" placeholder="Name" />
+                      <input className="form-control" ref={name} type="text" placeholder="Name" />
                     </div>
 
                     <div className="tptrack__id mb-10">
                       <span>
                         <i className="fal fa-envelope" />
                       </span>
-                      <input ref={email} type="email" placeholder="Email address" />
+                      <input className="form-control" ref={email} type="email" placeholder="Email address" />
                     </div>
                     <div className="tptrack__email mb-10">
                       <span>
                         <i className="fal fa-key" />
                       </span>
-                      <input ref={password} type="text" placeholder="Password" />
+                      <input className="form-control" ref={password} type="text" placeholder="Password" />
                     </div>
 
                     <div className="tptrack__email mb-10">
                       <span>
                         <i className="fal fa-key" />
                       </span>
-                      <input ref={passwordConfirm} type="text" placeholder="Confirm Password" />
+                      <input className="form-control" ref={passwordConfirm} type="text" placeholder="Confirm Password" />
                     </div>
 
                     <div className="tpsign__account">

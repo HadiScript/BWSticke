@@ -34,29 +34,29 @@ const SearchingDrawer = ({ open, setOpen }) => {
   };
 
   return (
-    <Drawer open={open} onClose={() => setOpen(false)}>
-      <input type="text" ref={search} className={""} onInput={searchItem} placeholder={"Search Product..."} />
+    <Drawer width={800} open={open} onClose={() => setOpen(false)}>
+      <input style={{ width: "100%", borderTop: "none", borderLeft: "none", borderRight: "none", fontSize: "18px" }} type="text" ref={search} onInput={searchItem} placeholder={"Search Product..."} />
 
-      <ul className={"classes.searchData_def"}>
-        {searchData?.map((product, index) => (
-          <li key={index}>
-            <Link href={`/product/${product.item.slug}`} onClick={hideSearchBar}>
-              <div className={"classes.thumb"}>
-                <ImageLoader src={product.item.image[0]?.url} alt={product.item.name} width={80} height={80} />
+      {searchData?.length === 0 ?
+        <div style={{ height: "100%" }} className="d-flex justify-content-center align-items-center">
+          <h6>Please search product by its name.</h6>
+        </div>
+        :
+        <div className="mt-4">
+          {searchData?.map((product, index) => (
+
+            <Link href={`/product/${product.item.slug}`} onClick={hideSearchBar} className="d-flex align-items-center gap-4 border-bottom py-4" key={index}>
+              <div>
+                <ImageLoader src={product.item.image[0]?.url} alt={product.item.name} width={60} height={60} />
               </div>
-              <div className={"classes.content"}>
-                <p>{product.item.name}</p>
-                <div className={"classes.unit"}>{`${product.item.unitValue} ${product.item.unit}`}</div>
-                <span>
-                  {/* {settings.settingsData.currency.symbol + product.item.discount} */}
-                  {/* {product.item.discount < product.item.price && <del> */}
-                  {/* </del>} */}
-                </span>
+              <div >
+                <Link href={"#"}>{product.item.name}</Link>
               </div>
             </Link>
-          </li>
-        ))}
-      </ul>
+
+          ))}
+        </div>
+      }
     </Drawer >
   )
 }

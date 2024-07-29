@@ -1,42 +1,47 @@
-import FeatureProduct from "~/components/UI/Common/Features"
-import SingleCardProduct from "~/components/UI/Common/SingleCardProduct"
-import DataBg from "~/components/UI/DataBg"
-import TopHeader from "~/components/UI/Header/TopHeader"
-import Banner from "~/components/UI/Home/Banner"
-import Footer from "~/components/UI/Home/Footer"
-import Hero from "~/components/UI/Home/Hero"
-import TopCategory from "~/components/UI/Home/TopCategory"
-import TopProducts from "~/components/UI/Home/TopProducts"
-import ClientLayout from "~/components/UI/Layouts/ClientLayout"
-import Error500 from "~/components/error/500"
-import homePageData from "~/lib/dataLoader/home"
-import { wrapper } from "~/redux/store";
+import dynamic from "next/dynamic";
 
+import { wrapper } from "~/redux/store";
+import homePageData from "~/lib/dataLoader/home";
+
+
+
+import SocialImages from "~/components/UI/Home/SocialImages";
+import Brands from "~/components/UI/Home/Brands";
+import Exclusive from "~/components/UI/Home/Exclusive";
+import TopCategories from "~/components/UI/Home/TopCategory";
+import Features from "~/components/UI/Collections/Features";
+
+
+
+const TopProducts = dynamic(() => import("~/components/UI/Home/TopProducts"));
+const ThreeColBanner = dynamic(() => import("~/components/UI/Home/ThreeColBanner"))
+const ClientLayout = dynamic(() => import("~/components/UI/Layouts/ClientLayout"))
+
+const Error500 = dynamic(() => import("~/components/error/500"));
 
 const Home = ({ data, error }) => {
+  return <ClientLayout>
+    <ThreeColBanner />
+    <Features />
 
-  console.log(data)
 
-  return (
-    <>
-      {
-        error ? (
-          <Error500 />
-        ) :
-          <ClientLayout categories={data?.category}>
-            <DataBg />
-            <Hero />
-            {/* <SingleCardProduct /> */}
-            <TopProducts list={data?.bestSelling} title={"Best Selling"} />
-            <Banner />
-            <TopProducts list={data?.newProduct} title={"New Product"} />
-            <FeatureProduct />
-            <TopCategory />
-          </ClientLayout>
-      }
-    </>
-  )
+
+    <TopProducts list={data?.bestSelling} title={"Best Selling"} />
+    <TopCategories />
+    <div className="my-5">
+      <Brands />
+    </div>
+
+    <div className="my-5">
+      <TopProducts list={data?.bestSelling} title={"Best Selling"} />
+    </div>
+    <Exclusive />
+
+    {/* heom */}
+    <SocialImages />
+  </ClientLayout>
 }
+
 
 
 
