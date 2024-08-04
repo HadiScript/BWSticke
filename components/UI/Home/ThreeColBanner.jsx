@@ -53,7 +53,7 @@ export default function ThreeColBanner() {
                             <h3 className="tp-slide-item__title text-white mb-25">
                               {x.heading}
                             </h3>
-                            <Link className="tp-slide-item__slide-btn tp-btn" href="/shop-2">
+                            <Link className="tp-slide-item__slide-btn tp-btn" href="/collections">
                               {x.btn} <i className="fal fa-long-arrow-right" />
                             </Link>
                           </div>
@@ -75,7 +75,7 @@ export default function ThreeColBanner() {
 
                 {HeroDataSmall?.map((x, index) => <div key={index + 1} className="col-lg-12 col-md-6 col-sm-6">
                   <div className="tpslider-banner white-banner mb-4">
-                    <Link href="/shop">
+                    <Link href="/collections">
                       <div className="tpslider-banner__img tpbannerthumb-5">
                         <Image src={`${process.env.NEXT_PUBLIC_URL}${x.img}`} alt="small-1" height={220} width={300} />
                         <div className="tpslider-banner__content">

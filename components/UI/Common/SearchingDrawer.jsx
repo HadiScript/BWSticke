@@ -50,7 +50,7 @@ const SearchingDrawer = ({ open, setOpen }) => {
                 <ImageLoader src={product.item.image[0]?.url} alt={product.item.name} width={60} height={60} />
               </div>
               <div >
-                <Link href={"#"}>{product.item.name}</Link>
+                <span>{product.item.name}</span>
               </div>
             </Link>
 

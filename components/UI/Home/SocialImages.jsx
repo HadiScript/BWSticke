@@ -42,7 +42,7 @@ export default function SocialImages() {
               <div className="tpsectionarea text-center mb-35">
                 <h5 className="tpsectionarea__subtitle">Follow On</h5>
                 <h4 className="tpsectionarea__title">
-                  <i className="fab fa-instagram" /> ninico-shop
+                  <i className="fab fa-instagram" /> BWStrike-shop
                 </h4>
               </div>
             </div>

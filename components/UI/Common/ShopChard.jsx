@@ -107,7 +107,7 @@ const ShopCard = ({ product, addToCart, addToWishlist }) => {
       <div className="tpproduct tpproductitem mb-45 p-relative">
         <div className="tpproduct__thumb">
           <div className="tpproduct__thumbitem p-relative">
-            <Link href={`/shop/${product.id}`}>
+            <Link href={`/product/${product?.slug}`}>
               <ImageLoader
                 src={`${process.env.NEXT_PUBLIC_URL}/imgs/products/9.jpg`}
                 // src={product.image[0]?.url}
@@ -120,13 +120,13 @@ const ShopCard = ({ product, addToCart, addToWishlist }) => {
             </Link>
             <div className="tpproduct__thumb-bg">
               <div className="tpproductactionbg">
-                <a onClick={() => addToCart(product.id)} className="add-to-cart">
+                {/* <a onClick={() => addToCart(product.id)} className="add-to-cart">
                   <i className="fal fa-shopping-basket" />
-                </a>
+                </a> */}
                 <a onClick={addToCompareList}>
                   <i className="fal fa-exchange" />
                 </a>
-                <Link href="#">
+                <Link href={`/product/${product?.slug}`}>
                   <i className="fal fa-eye" />
                 </Link>
                 <a onClick={addToWishList} className="wishlist">

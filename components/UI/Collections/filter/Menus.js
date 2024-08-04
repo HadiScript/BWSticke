@@ -44,7 +44,7 @@ export default function Menus({ update }) {
       </div> */}
 
       <select value={selected} className="chosen-single form-select" onChange={(e) => changeItem(e.target.value)}>
-        <option value="">asd</option>
+       
         {data.map((item, idx) => (
           <option key={idx} value={item.id}>
             {item.name}

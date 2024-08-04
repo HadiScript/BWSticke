@@ -6,6 +6,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import PriHeading from "../Common/PriHeading";
 import ShopCard from "../Common/ShopChard";
+import { _simpleProductCart, _variableProductCart } from "~/lib/cartHandle";
 
 const swiperOptions = {
   modules: [Autoplay, Pagination, Navigation],
@@ -49,6 +50,12 @@ export default function TopProducts({ list, title }) {
     // const item = products?.find((item) => item.id === id);
     // dispatch(addCart({ product: item }));
   };
+
+
+
+
+
+
   return (
     <>
       <section className="platinam-product-area pt-65 pb-65">
@@ -75,39 +82,6 @@ export default function TopProducts({ list, title }) {
               {list?.slice(0, 6).map((item, i) => (
                 <SwiperSlide key={i}>
                   <ShopCard product={item} />
-                  {/* <div className="tpratingitem tpproduct text-center">
-                    <div className="tpproduct__thumb p-relative">
-                      <Link href={`/shop/${item.id}`}>
-                        <img src={`/imgs/products/${item.imgf}`} alt="product-thumb" />
-                        <img className="thumbitem-secondary" src={`/imgs/products/${item.imgb}`} alt="product-thumb" />
-                      </Link>
-                      <div className="tpproduct__thumb-action">
-                        <Link href="#" onClick={() => addToCart(item.id)}>
-                          <i className="fal fa-shopping-basket" />
-                        </Link>
-                        <Link className="quckview" href="#">
-                          <i className="fal fa-eye" />
-                        </Link>
-                        <Link className="wishlist" href="/wishlist">
-                          <i className="fal fa-heart" />
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="tpratingitem__content">
-                      <h4 className="tpratingitem__title mb-5">
-                        <Link href={`/shop/${item.id}`}>Miko: Bold Miranda Joggers</Link>
-                      </h4>
-                      <span>$31.00</span>
-                      <div className="tpratingitem__star mt-5">
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="far fa-star" />
-                        <span>81 Reviews</span>
-                      </div>
-                    </div>
-                  </div> */}
                 </SwiperSlide>
               ))}
             </Swiper>

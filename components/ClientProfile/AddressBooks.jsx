@@ -1,13 +1,15 @@
 import { Button, Tag } from "antd"
 import { useRef, useState } from "react"
-import AddAddress from "./AddAddress";
+import EditAddress from "./EditAddress";
 import { deleteData, fetchData } from "~/lib/clientFunctions";
 import { toast } from "react-toastify";
 import useSWR from "swr";
 import PageLoader from "~/utils/PageLoader";
+import AddAddress from "./AddAddress";
 
 const AddressBooks = ({ id }) => {
   const [open, setOpen] = useState(false);
+  const [addNew, setAddNew] = useState(false)
 
   // const [isOpen, setIsOpen] = useState(false);
   // const [addNew, setAddNew] = useState(false);
@@ -56,7 +58,7 @@ const AddressBooks = ({ id }) => {
             <h4 className="">Address Book</h4>
           </div>
 
-          <Button onClick={() => setOpen(true)} type="dashed">Add New Address</Button>
+          <Button onClick={() => setAddNew(true)} type="dashed">Add New Address</Button>
 
 
           <div className="mt-4 d-flex flex-wrap gap-2 align-items-center">
@@ -95,7 +97,8 @@ const AddressBooks = ({ id }) => {
 
       </div>
 
-      <AddAddress data={selected} open={open} setOpen={handleCloseModal} />
+      <EditAddress data={selected} open={open} setOpen={handleCloseModal} />
+      <AddAddress open={addNew} setOpen={() => setAddNew(false)} />
 
 
     </PageLoader>

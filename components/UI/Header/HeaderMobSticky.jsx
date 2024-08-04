@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 // import CartShow from "../elements/CartShow";
 
@@ -17,7 +18,7 @@ export default function HeaderMobSticky({ scroll, isMobileMenu, handleMobileMenu
             <div className="col-6">
               <div className="logo text-center">
                 <Link href="/">
-                  <img src="/assets/img/logo/logo.png" alt="logo" />
+                  <Image src={`${process.env.NEXT_PUBLIC_URL}/assets/img/logo/logo.png`} alt="logo"  height={50} width={100} />
                 </Link>
               </div>
             </div>

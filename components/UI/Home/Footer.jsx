@@ -1,6 +1,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import FooterNewsLetter from "./FooterNewsLetter";
 
 export default function Footer() {
   return (
@@ -112,19 +113,7 @@ export default function Footer() {
                   </div>
                 </div>
                 <div className="col-lg-3 col-md-4">
-                  <div className="footer-widget footer-col-5 mb-40">
-                    <h4 className="footer-widget__title mb-30">Get Newsletter</h4>
-                    <p>Get on the list and get 10% off your first order!</p>
-                    <div className="footer-widget__newsletter">
-                      <form action="#">
-                        <input type="email" placeholder="Enter email address" />
-                        <button className="footer-widget__fw-news-btn tpsecondary-btn">
-                          Subscribe Now
-                          <i className="fal fa-long-arrow-right" />
-                        </button>
-                      </form>
-                    </div>
-                  </div>
+                  <FooterNewsLetter />
                 </div>
               </div>
             </div>
@@ -144,7 +133,7 @@ export default function Footer() {
                 </div>
                 <div className="col-xl-6 col-lg-4 col-md-4 col-sm-6 text-white text-end">
                   <div className="" style={{ fontSize: "16px" }}>
-                    Copyright 2024 BWSTRIKE. All rights reserved. Developed by HadiScripts.
+                    Copyright 2024 BWSTRIKE. All rights reserved. Developed by <a href="#">HadiScripts</a>.
                   </div>
                 </div>
               </div>

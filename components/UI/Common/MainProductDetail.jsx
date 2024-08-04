@@ -3,7 +3,6 @@ import ImageLoader from "./ImageLoader";
 
 const MainProductDetail = ({ handleOnClick2, activeIndex2, product, addItemToCart, changeColor, stepUpQty, stepDownQty, quantityAmount }) => {
 
-  console.log(product);
   return (
     <section className="product-area pt-80 pb-25">
       <div className="container">
@@ -24,15 +23,6 @@ const MainProductDetail = ({ handleOnClick2, activeIndex2, product, addItemToCar
                     />
                   </button>
                   )}
-                  {/* <button className={activeIndex2 == 4 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick2(4)}>
-                    <img src="/assets/img/product/product-1.jpg" alt="" />
-                  </button>
-                  <button className={activeIndex2 == 5 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick2(5)}>
-                    <img src="/assets/img/product/product-2.jpg" alt="" />
-                  </button>
-                  <button className={activeIndex2 == 6 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick2(6)}>
-                    <img src="/assets/img/product/product-3.jpg" alt="" />
-                  </button> */}
                 </div>
                 <div className="tab-content" id="v-pills-tabContent">
                   {product?.gallery?.map((item, index) => <div key={index} className={activeIndex2 == index ? "tab-pane fade show active" : "tab-pane fade"}>

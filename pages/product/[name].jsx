@@ -154,6 +154,7 @@ const ProductDetail = ({ data, error }) => {
 
   const addItemToCart = () => {
     const qty = Number(quantityAmount.current.value);
+    console.log("data.product", data.product);
     if (data.product.type === "simple") {
       simpleProductCart(qty);
     } else {
@@ -166,13 +167,18 @@ const ProductDetail = ({ data, error }) => {
   async function postQuestion(e) {
     try {
       e.preventDefault();
-
-      const _data = {
-        pid: data.product._id,
-        question: question.current.value.trim(),
-      };
-      const _r = await postData("/api/question", _data);
-      _r.success ? (toast.success("Question Added Successfully"), refreshData()) : toast.error("Something Went Wrong 500");
+      if (!session) {
+        toast.info("Please login to post a Question.")
+      }
+      else {
+        const _data = {
+          pid: data.product._id,
+          question: question.current.value.trim(),
+        };
+        const _r = await postData("/api/question", _data);
+        _r.success ? (toast.success("Question Added Successfully"), refreshData()) : toast.error("Something Went Wrong 500");
+        question.current.value = ""
+      }
     } catch (err) {
       console.log(err);
       toast.error(`Something Went Wrong - ${err.message}`);
@@ -216,7 +222,7 @@ const ProductDetail = ({ data, error }) => {
         stepDownQty={stepDownQty}
         quantityAmount={quantityAmount}
       />
-      <ProductDescriptionDetail activeIndex={activeIndex} handleOnClick={handleOnClick} product={data.product} postQuestion={postQuestion} question={question} />
+      <ProductDescriptionDetail refreshData={refreshData} activeIndex={activeIndex} handleOnClick={handleOnClick} product={data.product} postQuestion={postQuestion} question={question} />
       <div className="related-product-area pt-65 pb-50 related-product-border">
         <TopProducts list={relatedItem} title={"Related Products"} />
       </div>

@@ -52,9 +52,9 @@ const SignIn = () => {
       }
       if (res.ok) {
         toast.success("Login successful");
-        if (popup) {
-          // hidePopup();
-        }
+        // if (popup) {
+        // hidePopup();
+        // }
       }
     } catch (err) {
       console.log(err);
@@ -98,22 +98,15 @@ const SignIn = () => {
                   </div>
                   <form onSubmit={signinProcess}>
                     <div className="tptrack__id mb-10">
-                      <span>
-                        <i className="fal fa-user" />
-                      </span>
                       <input className="form-control" type="email" ref={email} placeholder="Email" />
                     </div>
                     <div className="tptrack__email mb-10">
-
-                      <span>
-                        <i className="fal fa-key" />
-                      </span>
                       <input className="form-control" type="text" ref={password} placeholder="Password" />
 
                     </div>
                     <div className="tpsign__remember d-flex align-items-center justify-content-between mb-15">
                       <div className="tpsign__pass">
-                        <Link href="#">Forget Password</Link>
+                        <Link href="/forget-password">Forget Password</Link>
                       </div>
                       <div className="tpsign__pass">
                         <Link href="/sign-up">Register</Link>

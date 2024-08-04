@@ -23,7 +23,7 @@ const AboutUs = () => {
               </div>
               <div className="tpabout__logo">
                 <Link href="/">
-                  <img src="/assets/img/banner/about-img-3.png" alt="" />
+                  {/* <img src="/assets/img/h/logos/white.png" alt="" height={200}/> */}
                 </Link>
               </div>
             </div>
@@ -85,7 +85,7 @@ const AboutUs = () => {
         </section>
         {/* about-area-end */}
         {/* team-area-start */}
-       
+
         {/* team-area-end */}
         {/* feature-area-start */}
         <section className="feature-area pt-70 pb-10">
@@ -100,7 +100,7 @@ const AboutUs = () => {
                 <div className="tpabout__inner-title-area about-inner-content ml-50 mr-50 mb-70">
                   <h4 className="tpabout__inner-sub-title mb-5">Features #01</h4>
                   <h4 className="tpabout__inner-title mb-25">Solutions that work together</h4>
-                  <p style={{fontSize : "16px"}}>
+                  <p style={{ fontSize: "16px" }}>
                     Publish your eCommerce site quickly with our easy-to-use store builder— no coding required. Migrate your items from
                     your point of sale system or turn your Instagram feed into a shopping site and start selling fast. Square Online works
                     for all kinds of businesses—retail, restaurants, services.
@@ -116,7 +116,7 @@ const AboutUs = () => {
                 <div className="tpabout__inner-title-area about-inner-content mr-100 mb-70">
                   <h4 className="tpabout__inner-sub-title mb-5">Features #02</h4>
                   <h4 className="tpabout__inner-title mb-25">All kinds of payments securely</h4>
-                  <p style={{fontSize : "16px"}}>
+                  <p style={{ fontSize: "16px" }}>
                     Publish your eCommerce site quickly with our easy-to-use store builder— no coding required. Migrate your items from
                     your point of sale system or turn your Instagram feed into a shopping site and start selling fast. Square Online works
                     for all kinds of businesses—retail, restaurants, services.

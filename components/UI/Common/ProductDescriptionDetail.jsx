@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import ProductQ_A from './Product_QnA'
 
-const ProductDescriptionDetail = ({ activeIndex, handleOnClick, product, postQuestion, question }) => {
+const ProductDescriptionDetail = ({ activeIndex, handleOnClick, product, postQuestion, question, refreshData }) => {
   return (
     <div className="product-details-area">
       <div className="container">
@@ -48,6 +48,7 @@ const ProductDescriptionDetail = ({ activeIndex, handleOnClick, product, postQue
                     product={product}
                     question={question}
                     postQuestion={postQuestion}
+                    refreshData={refreshData}
 
                   />
                   {/* <div className="product__details-info table-responsive">

@@ -16,6 +16,8 @@ const Wishlist = () => {
   const { session } = useSelector((state) => state.localSession);
   const ID = session?.user?.id;
   const url = `/api/profile?id=${ID}&scope=favorite`;
+
+
   const { data, error, mutate } = useSWR(ID ? url : null, fetchData);
   const [wishlist, setWishlist] = useState([]);
 
@@ -55,7 +57,7 @@ const Wishlist = () => {
 
 
 
-  console.log(wishlist)
+  // console.log(wishlist)
   return (
     <ClientLayout>
 
@@ -84,11 +86,12 @@ const Wishlist = () => {
                           <th className="cart-product-name">Name</th>
                           <th className="product-price">Unit Price</th>
 
-                          <th className="product-add-to-cart">Add To Cart</th>
+                          <th className="product-add-to-cart">Detail</th>
                           <th className="product-remove">Remove</th>
                         </tr>
                       </thead>
                       <tbody>
+
                         {wishlist?.map((item) => (
                           <tr className="cart-item" key={item.id}>
                             <td className="product-thumbnail">
@@ -109,12 +112,12 @@ const Wishlist = () => {
                               <span className="amount">${item?.price}</span>
                             </td>
                             <td className="product-add-to-cart">
-                              <a onClick={() => addToCart(item.id)} className="tp-btn tp-color-btn  tp-wish-cart banner-animation">
-                                Add To Cart
-                              </a>
+                              <Link href={`/product/${item?.name}}`} className="tp-btn tp-color-btn  tp-wish-cart banner-animation">
+                                Detail
+                              </Link>
                             </td>
                             <td className="product-remove">
-                              <button onClick={() => removeFromWishlist(item?.id)} className="remove">
+                              <button onClick={() => removeFromWishlist(item?._id)} className="remove">
                                 <span className="flaticon-dustbin">Remove</span>
                               </button>
                             </td>
@@ -122,6 +125,9 @@ const Wishlist = () => {
                         ))}
                       </tbody>
                     </table>
+
+                    {wishlist.length === 0 && <p className="text-center mt-5 p-3">You have no items on your wishlist</p>}
+                    {/* {!session && <p className="text-center mt-5 p-3">You </p>} */}
                   </div>
                 </form>
               </div>

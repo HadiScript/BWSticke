@@ -1,3 +1,6 @@
+import { Dropdown } from 'antd'
+import { useSession } from 'next-auth/react'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
@@ -8,16 +11,86 @@ import PurchaseHistory from '~/components/ClientProfile/PurchaseHistory'
 import RefundRequest from '~/components/ClientProfile/RefundRequest'
 import ClientLayout from '~/components/UI/Layouts/ClientLayout'
 
+import { FaHistory } from "react-icons/fa";
+import { TiBusinessCard } from "react-icons/ti";
+import { RiRefund2Fill } from "react-icons/ri";
+import { TbAddressBook } from "react-icons/tb";
+import { MdOutlinePassword } from "react-icons/md";
+
+
+
+
+
 const ClientsSidebar = ({ current, setCurrent }) => {
-  return <div className="col-12 col-lg-2  p-2 border-end client-sidebar">
-    <div className="d-flex flex-column gap-2">
-      <span className={`${current === "profile" && "active"} `} role='button' onClick={() => setCurrent('profile')}> Manage Profile </span>
-      <span className={`${current === "purchase" && "active"} `} role='button' onClick={() => setCurrent('purchase')}> Purchase History </span>
-      <span className={`${current === "refund" && "active"} `} role='button' onClick={() => setCurrent('refund')}> Refund Request </span>
-      <span className={`${current === "address" && "active"} `} role='button' onClick={() => setCurrent('address')}> Manage Address Book </span>
-      <span className={`${current === "password" && "active"} `} role='button' onClick={() => setCurrent('password')}> Manage Password </span>
+  const { data: session } = useSession();
+  const handleButtonClick = (e) => {
+    console.log('click left button', e);
+  };
+
+  const handleMenuClick = (e) => {
+    console.log('click', e);
+  };
+
+  const items = [
+    {
+      label: 'profile',
+      key: '1',
+      icon: <TiBusinessCard size={17} />,
+      onClick: () => setCurrent('profile')
+    },
+    {
+      label: 'purchase',
+      key: '2',
+      icon: <FaHistory size={17} />,
+      onClick: () => setCurrent('purchase')
+    },
+    {
+      label: 'refund',
+      key: '3',
+      icon: <RiRefund2Fill size={17} />,
+      onClick: () => setCurrent('refund')
+
+    },
+    {
+      label: 'address',
+      key: '4',
+      icon: <TbAddressBook size={17} />,
+      onClick: () => setCurrent('address')
+
+    },
+    {
+      label: 'password',
+      key: '5',
+      icon: <MdOutlinePassword size={17} />,
+      onClick: () => setCurrent('password')
+
+
+    },
+  ];
+  const menuProps = {
+    items,
+    onClick: handleMenuClick,
+  };
+  return <>
+    <div className="d-none d-md-block col-12 col-lg-2  p-2 border-end client-sidebar">
+      <div className="d-flex flex-column gap-2">
+        <span className={`d-flex gap-2 align-items-center ${current === "profile" && "active"} `} role='button' onClick={() => setCurrent('profile')}>  <TiBusinessCard size={20} /> <span>Manage Profile</span> </span>
+        <span className={`d-flex gap-2 align-items-center ${current === "purchase" && "active"} `} role='button' onClick={() => setCurrent('purchase')}>  <FaHistory size={20} /> <span>Purchase History</span>   </span>
+        <span className={`d-flex gap-2 align-items-center ${current === "refund" && "active"} `} role='button' onClick={() => setCurrent('refund')}>  <RiRefund2Fill size={20} /> <span>Refund Request</span> </span>
+        <span className={`d-flex gap-2 align-items-center ${current === "address" && "active"} `} role='button' onClick={() => setCurrent('address')}> <TbAddressBook size={20} /> <span>Manage Address</span> Book </span>
+        <span className={`d-flex gap-2 align-items-center ${current === "password" && "active"} `} role='button' onClick={() => setCurrent('password')}> <MdOutlinePassword size={20} /> <span>Manage Password</span> </span>
+        {session && (session.user.a || session.user.s.status) &&
+          <Link href={'/dashboard'} role='button' > Dashboard </Link>
+        }
+      </div>
     </div>
-  </div>
+
+    <div className="d-block d-md-none text-end mb-5" >
+      <Dropdown.Button menu={menuProps} onClick={handleButtonClick}>
+        Menus
+      </Dropdown.Button>
+    </div>
+  </>
 }
 
 const Profile = () => {

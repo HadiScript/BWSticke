@@ -7,7 +7,7 @@ import Link from "next/link";
 // import ShopCard from "./ShopCard";
 // import ShopCardList from "./ShopCardList";
 
-const CollectionsList = ({ items, data_length, loadMore }) => {
+const   CollectionsList = ({ items, data_length, loadMore }) => {
 
 
   return (
@@ -41,13 +41,13 @@ const CollectionsList = ({ items, data_length, loadMore }) => {
                   </button>
                 ) : undefined} */}
 
-                <select className="chosen-single form-select" >
+                {/* <select className="chosen-single form-select" >
                   <option value="">Sort by (default)</option>
                   <option value="asc">Newest</option>
                   <option value="des">Oldest</option>
-                </select>
+                </select> */}
 
-                <select className="chosen-single form-select ms-3 " >
+                {/* <select className="chosen-single form-select ms-3 " >
                   <option
                     value={JSON.stringify({
                       start: 0,
@@ -80,7 +80,7 @@ const CollectionsList = ({ items, data_length, loadMore }) => {
                   >
                     30 per page
                   </option>
-                </select>
+                </select> */}
               </div>
               <div className="tpproductnav tpnavbar product-filter-nav">
                 {/* <nav>
