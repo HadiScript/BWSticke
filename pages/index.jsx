@@ -35,7 +35,10 @@ const Home = ({ data, error }) => {
     <div className="my-5">
       <TopProducts list={data?.bestSelling} title={"Best Selling"} />
     </div>
-    <Exclusive />
+
+    <div className="d-none d-md-block">
+      <Exclusive />
+    </div>
 
     {/* heom */}
     <SocialImages />

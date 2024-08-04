@@ -7,6 +7,7 @@ import BannerCats from "./BannerCats";
 import ImageLoader from "../Common/ImageLoader";
 import Image from "next/image";
 import { HeroData, HeroDataSmall } from "~/data/Hero";
+import { Grid } from "antd";
 
 
 const swiperOptions = {
@@ -33,6 +34,7 @@ const swiperOptions = {
 export default function ThreeColBanner() {
   const [isToggled, setToggled] = useState(true);
   const handleToggle = () => setToggled(!isToggled);
+  const points = Grid.useBreakpoint()
   return (
     <>
       <section className="slider-area slider-bg-overlay pb-30 pt-60 " data-background="assets/img/banner/banner-bg-05.jpg">
@@ -58,7 +60,7 @@ export default function ThreeColBanner() {
                             </Link>
                           </div>
                           <div className="tp-slide-item__img">
-                            <Image src={`${process.env.NEXT_PUBLIC_URL}${x.img}`} alt="big-2" height={480} width={830} />
+                            <Image src={`${process.env.NEXT_PUBLIC_URL}${x.img}`} alt="big-2" height={points.md ? 480 : 280} width={830} />
                           </div>
                         </div>
                       </SwiperSlide>
