@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development NEXT_PUBLIC_APP_SSL=no node server.js",
+    "dev": "cross-env NODE_ENV=development NEXT_PUBLIC_APP_SSL=no PORT=3000 node server.js",
     "build": " next build",
     "lint": "next lint",
     "start": "cross-env NODE_ENV=production NEXT_PUBLIC_APP_SSL=yes node server.js",
-    "start_dev": "cross-env NODE_ENV=production NEXT_PUBLIC_APP_SSL=no node server.js",
+    "start_dev": "cross-env NODE_ENV=production NEXT_PUBLIC_APP_SSL=no PORT=3001 node server.js",
     "seed": "node seeder/index.mjs",
     "s3tolocal": "node codemod/s3ToLocal.mjs",
     "analyze": "cross-env ANALYZE=true npm run build"
