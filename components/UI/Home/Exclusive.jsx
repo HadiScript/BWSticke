@@ -1,7 +1,10 @@
+import { Grid } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Exclusive() {
+  const points = Grid.useBreakpoint()
+
   return (
     <>
       <section className="exclusive-area pb-65">
@@ -10,7 +13,7 @@ export default function Exclusive() {
             <div className="col-lg-8 col-md-8">
               <div className="exclusiveitem banner-animation p-relative mb-30">
                 <div className="exclusiveitem__thumb">
-                  <Image src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/2cats/big1.webp`} alt="big-2" height={500} width={980} />
+                  <Image src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/2cats/big1.webp`} alt="big-2" height={points.md ? 500 : 300} width={980} />
                   {/* <img src="/assets/img/banner/banner-offer-01.jpg" alt="" /> */}
                 </div>
                 <div className="tpexclusive__content">
@@ -19,7 +22,7 @@ export default function Exclusive() {
                     Gloves <br /> Exclusive In
                   </h3>
                   <div className="tpexclusive__btn">
-                    <Link href="/shop" className="tp-btn banner-animation">
+                    <Link href="/collections" className="tp-btn banner-animation">
                       Shop Now
                     </Link>
                   </div>
@@ -29,7 +32,7 @@ export default function Exclusive() {
             <div className="col-lg-4 col-md-4">
               <div className="exclusivearea banner-animation p-relative mb-30">
                 <div className="exclusivearea__thumb">
-                  <Image className="rounded" src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/2cats/big2.webp`} alt="big-2" height={500} width={980} />
+                  <Image className="rounded" src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/2cats/big2.webp`} alt="big-2" height={points.md ? 500 : 250} width={980} />
                 </div>
                 <div className="tpexclusive__contentarea text-center">
                   <h4 className="tpexclusive__subtitle subcolor">Discount</h4>
