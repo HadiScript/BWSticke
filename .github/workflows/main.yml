@@ -13,7 +13,7 @@ jobs:
         with:
           host: 158.220.122.130
           username: root
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.GIT_KEY }}
           # port: 22 (default port, can be omitted if 22)
           script: |
             cd /root/bwstrike/BWSticke
@@ -32,7 +32,7 @@ jobs:
         with:
           host: 158.220.122.130
           username: root
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.GIT_KEY }}
           # port: 22 (default port, can be omitted if 22)
           script: |
             cd /root/bwstrike/BWSticke
@@ -53,7 +53,7 @@ jobs:
         with:
           host: 158.220.122.130
           username: root
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.GIT_KEY }}
           # port: 22 (default port, can be omitted if 22)
           script: |
             cd /root/bwstrike/BWSticke
