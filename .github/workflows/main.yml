@@ -45,8 +45,8 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Production
-    needs: Staging
-    # needs: Testing (uncomment if Testing stage is needed before Production)
+    #needs: Staging
+    needs: Testing (uncomment if Testing stage is needed before Production)
     steps:
       - name: Execute remote SSH commands using SSH key
         uses: appleboy/ssh-action@master
