@@ -28,17 +28,17 @@ const Home = ({ data, error }) => {
 
     <TopProducts list={data?.bestSelling} title={"Best Selling"} />
     <TopCategories />
-    <div className="my-5">
-      <Brands />
-    </div>
+    {/* <div className="my-5">
+    </div> */}
+    <Brands />
 
-    <div className="my-5">
-      <TopProducts list={data?.bestSelling} title={"Best Selling"} />
-    </div>
+    {/* <div className="my-5">
+    </div> */}
+    <TopProducts list={data?.bestSelling} title={"Best Selling"} />
 
-    <div className="d-none d-md-block">
-      <Exclusive />
-    </div>
+    {/* <div className="d-none d-md-block">
+    </div> */}
+    <Exclusive />
 
     {/* heom */}
     <SocialImages />

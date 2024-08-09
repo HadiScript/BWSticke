@@ -25,6 +25,7 @@ import "/public/assets/css/magnific-popup.css";
 import "/public/assets/css/meanmenu.css";
 import "/public/assets/css/spacing.css";
 import "/public/assets/css/main.css";
+import "/public/assets/css/layout.css";
 
 import { SessionProvider } from "next-auth/react";
 

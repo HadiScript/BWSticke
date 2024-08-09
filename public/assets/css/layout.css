@@ -1,0 +1,100 @@
+.fixedColumn {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.leftColumn {
+  left: 0;
+  width: 20%;
+  background: #000000;
+}
+
+.mobile-sidebar {
+  background: #000000;
+}
+
+.nav-link {
+  /* color: white !important; */
+  /* font-size: 1 !important; */
+}
+
+._active {
+  font-weight: 600;
+  border-radius: 0px !important;
+  border-right: 2px solid #083344;
+  color: #ffffff !important;
+  font-size: 15px;
+  background-color: transparent !important;
+}
+
+.main-db_layout ._active .its-icon {
+  background-color: #93c5fd;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.centerColumn {
+  padding: 10px;
+  margin-left: 16.6%;
+  background-color: #e6adad17 !important;
+  min-height: 100vh;
+}
+
+.create-quiz-ai {
+  width: 650px !important;
+}
+
+.create-quiz-ai .heading {
+  font-size: 50px;
+  font-weight: bold;
+  color: #083344;
+}
+
+@media screen and (max-width: 992px) {
+  /* Adjust breakpoint as needed */
+  .leftColumn,
+  .rightColumn {
+    display: none;
+  }
+  .centerColumn {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .create-quiz-ai {
+    width: 400px !important;
+  }
+
+  .create-quiz-ai .heading {
+    font-size: 30px;
+  }
+}
+
+.ant-menu-item-selected {
+  color: #000000e0 !important;
+  background-color: transparent !important;
+  border-radius: 0px !important;
+}
+
+.ant-drawer-body {
+  padding: 0px !important;
+}
+
+/* scrollbar */
+.customScrollbar {
+  max-height: 50vh;
+  overflow-y: auto;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #0d1282; /* For Firefox */
+}
+
+.customScrollbar::-webkit-scrollbar {
+  width: 4px; /* For Chrome, Safari, and Opera */
+}
+
+.customScrollbar::-webkit-scrollbar-thumb {
+  background-color: #0d1282; /* For Chrome, Safari, and Opera */
+  border-radius: 10px;
+}

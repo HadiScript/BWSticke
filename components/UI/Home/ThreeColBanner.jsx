@@ -60,7 +60,7 @@ export default function ThreeColBanner() {
                             </Link>
                           </div>
                           <div className="tp-slide-item__img">
-                            <Image src={`${process.env.NEXT_PUBLIC_URL}${x.img}`} alt="big-2" height={points.md ? 480 : 280} width={830} />
+                            <img src={`${process.env.NEXT_PUBLIC_URL}${x.img}`} alt="heroimage" />
                           </div>
                         </div>
                       </SwiperSlide>
@@ -79,7 +79,8 @@ export default function ThreeColBanner() {
                   <div className="tpslider-banner white-banner mb-4">
                     <Link href="/collections">
                       <div className="tpslider-banner__img tpbannerthumb-5">
-                        <Image src={`${process.env.NEXT_PUBLIC_URL}${x.img}`} alt="small-1" height={220} width={300} />
+                        <img src={`${process.env.NEXT_PUBLIC_URL}${x.img}`} alt="heroimage" />
+                        {/* <Image src={`${process.env.NEXT_PUBLIC_URL}${x.img}`} alt="small-1" height={220} width={300} /> */}
                         <div className="tpslider-banner__content">
                           <span className={`tpslider-banner__sub-title `}>{x.upper}</span>
                           <h4 className={`tpslider-banner__title  ${x.blackText ? "text-dark" : ""}`}>

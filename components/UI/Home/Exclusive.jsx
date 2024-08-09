@@ -13,8 +13,8 @@ export default function Exclusive() {
             <div className="col-lg-8 col-md-8">
               <div className="exclusiveitem banner-animation p-relative mb-30">
                 <div className="exclusiveitem__thumb">
-                  <Image src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/2cats/big1.webp`} alt="big-2" height={points.md ? 500 : 300} width={980} />
-                  {/* <img src="/assets/img/banner/banner-offer-01.jpg" alt="" /> */}
+                  {/* <Image src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/2cats/big1.webp`} alt="big-2" height={points.md ? 500 : 300} width={980} /> */}
+                  <img src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/2cats/big1.webp`} alt="big-2" />
                 </div>
                 <div className="tpexclusive__content">
                   <h4 className="tpexclusive__subtitle">Collection</h4>
@@ -31,8 +31,11 @@ export default function Exclusive() {
             </div>
             <div className="col-lg-4 col-md-4">
               <div className="exclusivearea banner-animation p-relative mb-30">
-                <div className="exclusivearea__thumb">
+                {/* <div className="exclusivearea__thumb">
                   <Image className="rounded" src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/2cats/big2.webp`} alt="big-2" height={points.md ? 500 : 250} width={980} />
+                </div> */}
+                <div className="exclusivearea__thumb">
+                  <img className="rounded" src={`${process.env.NEXT_PUBLIC_URL}/assets/img/h/2cats/big2.webp`} alt="big-2" />
                 </div>
                 <div className="tpexclusive__contentarea text-center">
                   <h4 className="tpexclusive__subtitle subcolor">Discount</h4>
