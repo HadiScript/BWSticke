@@ -1,0 +1,67 @@
+name: CI + CD
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Staging:
+    runs-on: ubuntu-latest
+    environment: Staging
+    steps:
+      - name: Execute remote SSH commands using SSH key
+        uses: appleboy/ssh-action@master
+        with:
+          host: 158.220.122.130
+          username: root
+          key: ${{ secrets.GIT_KEY }}
+          # port: 22 (default port, can be omitted if 22)
+          script: |
+            cd /root/bwstrike/BWSticke
+            git pull
+            npm install -f
+            pm2 restart backend
+
+  Testing:
+    runs-on: ubuntu-latest
+    environment:
+      name: Testing
+    needs: Staging
+    steps:
+      - name: Execute remote SSH commands using SSH key
+        uses: appleboy/ssh-action@master
+        with:
+          host: 158.220.122.130
+          username: root
+          key: ${{ secrets.GIT_KEY }}
+          # port: 22 (default port, can be omitted if 22)
+          script: |
+            cd /root/bwstrike/BWSticke
+            git pull
+            npm run build
+            #kill -9 $(lsof -t -i:3003)
+            pm2 restart test
+
+  Production:
+    runs-on: ubuntu-latest
+    environment:
+      name: Production
+    #needs: Staging
+    needs: Testing
+    steps:
+      - name: Execute remote SSH commands using SSH key
+        uses: appleboy/ssh-action@master
+        with:
+          host: 158.220.122.130
+          username: root
+          key: ${{ secrets.GIT_KEY }}
+          # port: 22 (default port, can be omitted if 22)
+          script: |
+            cd /root/bwstrike/BWSticke
+            git pull
+            npm run build
+            pm2 stop test
+            pm2 stop frontend
+            kill -9 $(lsof -t -i:3001)
+            pm2 restart backend
+            pm2 restart frontend
+            # pm2 start npm --name "frontend" -- run preview:host
