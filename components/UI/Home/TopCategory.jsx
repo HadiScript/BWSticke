@@ -7,6 +7,8 @@ export default function TopCategories() {
   return (
     <>
       <section className="banner-area pt-15 pb-15">
+
+
         <div className="bannerborder">
           <div className="container-fluid">
             <div className="row gx-3">
